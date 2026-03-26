@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Accountancy | Strategic Accounting for Growth & Innovation | Birmingham</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #1a2e4a;
+            --white: #ffffff;
+            --light-grey: #f4f4f4;
+            --teal: #1a7a6e;
+            --text-dark: #333333;
+            --text-light: #555555;
+            --border-color: #e0e0e0;
+            --font-main: 'Inter', sans-serif;
+            --section-padding: 80px 20px;
+            --max-width: 1200px;
+            --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: var(--border-radius-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-navy {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-navy:hover {
+            background-color: #122136;
+        }
+
+        .btn-teal {
+            background-color: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-teal:hover {
+            background-color: #125e54;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .hero {
+            background-color: var(--light-grey);
+            padding: var(--section-padding);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .hero-trust {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .lgbtq-badge {
+            background: rgba(26, 122, 110, 0.1);
+            color: var(--teal);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .services {
+            background-color: var(--white);
+            padding: var(--section-padding);
+        }
+
+        .section-headline {
+            text-align: center;
+            font-size: 2.25rem;
+            color: var(--navy);
+            margin-bottom: 56px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .about {
+            background-color: var(--light-grey);
+            padding: var(--section-padding);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .comparison-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--navy);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+        }
+
+        .comparison-card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .comparison-card li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+        }
+
+        .comparison-card:first-child li::before {
+            content: "✓";
+            color: var(--teal);
+        }
+
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 64px 20px 32px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        .tax-compliance-section {
+            background-color: #edf4f6;
+            padding: 80px 0;
+        }
+
+        .tax-compliance-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .tax-compliance-image img {
+            width: 100%;
+            height: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .tax-compliance-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tax-compliance-heading {
+            font-size: 2.75rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #1a3a5c;
+            margin: 0;
+        }
+
+        .tax-compliance-body {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #4a5568;
+            margin: 0;
+            max-width: 400px;
+        }
+
+        .tax-compliance-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .tax-compliance-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .tax-compliance-check {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: #2a7f8f;
+        }
+
+        .tax-compliance-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 14px 28px;
+            background-color: #2a7f8f;
+            color: #ffffff;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            align-self: flex-start;
+            transition: background-color 0.2s ease;
+        }
+
+        .tax-compliance-btn:hover {
+            background-color: #1f6370;
+        }
+
+        @media (max-width: 768px) {
+            .tax-compliance-inner {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 0 20px;
+            }
+            .tax-compliance-section {
+                padding: 56px 0;
+            }
+            .tax-compliance-heading {
+                font-size: 2rem;
+            }
+            .tax-compliance-image img {
+                max-height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Crystal Accountancy</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#tax">Tax</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="btn btn-navy" style="color: white;">Request a Callback</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div style="background: var(--navy); color: white; display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 16px;">
+                        Birmingham's Strategic Accountants</div>
+                    <h1>Strategic Accounting for Growth & Innovation</h1>
+                    <p>We help businesses move beyond traditional accounting — with forward-focused planning, real business advisory, and tech-driven insights that fuel growth.</p>
+                    <a href="#contact" class="btn btn-teal">Book a Free Business Performance Review</a>
+                    <div class="hero-trust">
+                        <span style="color: #f6ad55;">★★★★★</span>
+                        <span>5.0 ★ Rating (6 reviews)</span>
+                        <span class="lgbtq-badge">🏳️‍🌈 LGBTQ+ Friendly</span>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="about-team.png" alt="Crystal Accountancy team in Birmingham"
+                        style="width: 100%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"
+                        onerror="this.src='https://placehold.co/800x600/1a7a6e/white?text=Crystal+Accountancy'">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-headline">Accounting & Consulting Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Tax Preparation & Planning</h3>
+                        <p>Proactive tax strategies that minimise liabilities and maximise efficiency — not just at tax time.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📒</div>
+                        <h3>Bookkeeping & Financial Statements</h3>
+                        <p>Clean, compliant accounts that give you a real-time picture of your financial health.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h3>Payroll Services & Self Assessments</h3>
+                        <p>Full payroll management, RTI submissions, and self-assessment returns handled for you.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3>Business Consulting & Advisory</h3>
+                        <p>Business development, AI automation, deal advisory — strategic guidance to drive growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container about-grid">
+                <div>
+                    <img src="pexels-shootsaga-31851560.png" alt="Crystal Accountancy strategic accounting team"
+                        style="width: 100%; height: 400px; object-fit: cover; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"
+                        onerror="this.src='https://placehold.co/700x500/1a7a6e/white?text=Crystal+Accountancy'">
+                </div>
+                <div>
+                    <h2 style="font-size: 2.25rem; color: var(--navy); margin-bottom: 24px;">How Strategic Accounting Drives Business Growth</h2>
+                    <p><strong>The Limitations of Traditional Accounting</strong><br>
+                    Most businesses only talk to their accountant at tax time — when it's already too late to influence the outcome. Traditional accounting focuses on what has happened: reports, reconciliations, audits. Important, but not enough.</p>
+                    <p><strong>The Rise of Strategic Accounting</strong><br>
+                    At Crystal Accountancy, we help you forecast the future, not just report the past. From cash flow forecasting to scenario planning and proactive tax strategies — we turn numbers into actionable insights.</p>
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4>✓ Strategic Accounting</h4>
+                            <ul>
+                                <li>Forward-focused planning</li>
+                                <li>Real business advisory</li>
+                                <li>Tech-driven insights</li>
+                                <li>Proactive tax strategies</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-card">
+                            <h4>✗ Traditional Accounting</h4>
+                            <ul>
+                                <li>Reactive, not proactive</li>
+                                <li>Stuck in the past</li>
+                                <li>Missed opportunities</li>
+                                <li>Only at tax time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tax" class="tax-compliance-section">
+            <div class="tax-compliance-inner">
+                <div class="tax-compliance-content">
+                    <h2 class="tax-compliance-heading">Want your accounting to fuel growth — not just meet deadlines?</h2>
+                    <p class="tax-compliance-body">
+                        Let's turn your numbers into a strategy. Book a free business performance review today.
+                    </p>
+                    <ul class="tax-compliance-list">
+                        <li><svg class="tax-compliance-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Compliance Reporting</li>
+                        <li><svg class="tax-compliance-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Business Development</li>
+                        <li><svg class="tax-compliance-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI Automation & Deal Advisory</li>
+                    </ul>
+                    <a href="#contact" class="tax-compliance-btn">Book a Free Review &#8599;</a>
+                </div>
+                <div class="tax-compliance-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Strategic business planning" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" style="padding: 80px 20px; background: white;">
+            <div class="container">
+                <h2 class="section-headline">What our clients say</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                    <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p style="font-style: italic; margin: 16px 0;">"Crystal Accountancy transformed how I look at my business. Their strategic approach helped me spot opportunities I was completely missing."</p>
+                        <strong>James T., Birmingham</strong>
+                    </div>
+                    <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p style="font-style: italic; margin: 16px 0;">"Finally, accountants who think ahead. Their advice on AI automation alone has saved us hours every week."</p>
+                        <strong>Sarah M., West Midlands</strong>
+                    </div>
+                    <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p style="font-style: italic; margin: 16px 0;">"Professional, forward-thinking, and genuinely care about my business. The free performance review was a game-changer."</p>
+                        <strong>David P., Sutton Coldfield</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--navy); color: white; text-align: center; padding: 80px 20px;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Ready to turn your numbers into a strategy?</h2>
+                <p style="margin-bottom: 32px; opacity: 0.9;">Book a free, no-obligation business performance review today.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn" style="background: white; color: var(--navy);">Request a Callback</a>
+                    <a href="#contact" class="btn btn-teal">Book Free Review</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="padding: 80px 20px; background: var(--light-grey);">
+            <div class="container" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center;">
+                <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-subtle);">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Crystal Accountancy will be in touch soon.');">
+                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name</label><input type="text" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
+                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Email</label><input type="email" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
+                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Phone</label><input type="tel" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
+                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">How can we help?</label><select style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"><option>Business Performance Review</option><option>Tax Planning</option><option>Bookkeeping</option><option>Payroll</option><option>Business Consulting</option></select></div>
+                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label><textarea style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; height: 120px;"></textarea></div>
+                        <button type="submit" class="btn btn-navy" style="width: 100%;">Send Enquiry</button>
+                    </form>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 32px; text-align: center;">
+                    <div>
+                        <strong>📞 0121 209 9228</strong>
+                        <p>info@crystalaccountancy.org</p>
+                    </div>
+                    <div>
+                        <strong>📍 24-26 Regent Place, Birmingham</strong>
+                        <p>B3 9NJ</p>
+                        <p>Office hours: Mon–Fri, 9am–5pm</p>
+                        <p style="margin-top: 12px;">🏳️‍🌈 LGBTQ+ Friendly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <p>&copy; 2026 Crystal Accountancy. All rights reserved.</p>
+            <div style="display: flex; gap: 24px;">
+                <a href="#" style="color: #a0aec0;">Privacy Policy</a>
+                <a href="#" style="color: #a0aec0;">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
